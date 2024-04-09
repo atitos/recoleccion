@@ -32,7 +32,7 @@
 
 <script>
 import { defineComponent, ref, watch } from 'vue';
-import { useQuasar } from 'quasar'
+import axios from 'axios';
 
 export default defineComponent({
   name: 'AttRecolectorDeDatos',
@@ -62,8 +62,15 @@ export default defineComponent({
       serviceTypeOptions,
       serviceOptions,
 
-      onSubmit() {
-        console.log({serviceType: serviceType.value, service: service.value.value})
+      async onSubmit() {
+        try {
+          const url = `http://127.0.0.1:5000/save/${service.value.value}`;
+          console.log(url);
+          const response = await axios.get(url);
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
       },
       onReset() {
         serviceType.value = null;

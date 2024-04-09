@@ -58,9 +58,9 @@ const linksList = [
   },
   {
     title: 'Github',
-    caption: 'github.com/quasarframework',
+    caption: 'GitHub del UI del proyecto',
     icon: 'code',
-    link: 'https://github.com/quasarframework'
+    link: 'https://github.com/atitos/recoleccion'
   },
 ]
 
